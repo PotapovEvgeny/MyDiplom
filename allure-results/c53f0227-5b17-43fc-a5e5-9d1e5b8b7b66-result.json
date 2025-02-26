@@ -1,0 +1,105 @@
+{
+    "name": "Переход в раздел 'Новости'",
+    "start": 1740490705587,
+    "stop": 1740490711796,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Открываем главное меню",
+            "start": 1740490710920,
+            "stop": 1740490710920,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в раздел 'Новости'",
+            "start": 1740490711267,
+            "stop": 1740490711268,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверяем, что блок новостей отображается",
+            "start": 1740490711550,
+            "stop": 1740490711550,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "c53f0227-5b17-43fc-a5e5-9d1e5b8b7b66",
+    "historyId": "6177e185e091a85d8c1b63e4ff794f81",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.MainMenuTest.openNewsSectionTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.MainMenuTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "openNewsSectionTest"
+        },
+        {
+            "name": "suite",
+            "value": "Страница главного меню"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1595)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 5. Переход в раздел 'Новости'"
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "name": "Должна отобразиться страница фильтрации новостей",
+    "start": 1740563074459,
+    "stop": 1740563084720,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Открываем главное меню",
+            "start": 1740563083396,
+            "stop": 1740563083396,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в раздел 'Новости'",
+            "start": 1740563083742,
+            "stop": 1740563083742,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Открываем страницу фильтрации новостей",
+            "start": 1740563084110,
+            "stop": 1740563084110,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверяем, что заголовок фильтрации новостей отображается",
+            "start": 1740563084514,
+            "stop": 1740563084515,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ed79fe60-b19f-4057-b125-a865b6322201",
+    "historyId": "bc589ee44d55aabcdda4458f14f5441b",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.FilterNewsTest.shouldDisplayFilterNewsPage",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.FilterNewsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldDisplayFilterNewsPage"
+        },
+        {
+            "name": "suite",
+            "value": "Страница фильтрации новостей"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(2175)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 13. Страница фильтра новостей"
+        }
+    ]
+}

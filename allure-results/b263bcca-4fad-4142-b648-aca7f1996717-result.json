@@ -1,0 +1,89 @@
+{
+    "name": "Переход в раздел 'Все новости'",
+    "start": 1740490690457,
+    "stop": 1740490699352,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Переход в раздел 'Все новости')",
+            "start": 1740490698789,
+            "stop": 1740490698789,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверяем, что блок новостей отображается",
+            "start": 1740490699116,
+            "stop": 1740490699116,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "b263bcca-4fad-4142-b648-aca7f1996717",
+    "historyId": "74221bff964ddcfbfe4e46227689e0c7",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.MainMenuTest.openAllNewsSectionTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.MainMenuTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "openAllNewsSectionTest"
+        },
+        {
+            "name": "suite",
+            "value": "Страница главного меню"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1595)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 6. Переход в раздел \"News\" из раздела \"Главная\" через кнопку-ссылку \"All news\""
+        }
+    ]
+}

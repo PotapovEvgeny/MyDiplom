@@ -1,0 +1,89 @@
+{
+    "name": "Переход в раздел 'О приложении'",
+    "start": 1740490699380,
+    "stop": 1740490705571,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Открываем главное меню",
+            "start": 1740490704686,
+            "stop": 1740490704686,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в раздел 'О приложении'",
+            "start": 1740490705040,
+            "stop": 1740490705040,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "ff460709-1f59-47c7-9f37-c9a56b6adbd3",
+    "historyId": "db45499b5d43a40c31023579dc1cf998",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.MainMenuTest.openAboutSectionTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.MainMenuTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "openAboutSectionTest"
+        },
+        {
+            "name": "suite",
+            "value": "Страница главного меню"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1595)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 5. Переход в раздел 'О приложении'"
+        }
+    ]
+}

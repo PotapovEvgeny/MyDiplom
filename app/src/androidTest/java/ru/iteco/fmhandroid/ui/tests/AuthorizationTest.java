@@ -1,5 +1,14 @@
 package ru.iteco.fmhandroid.ui.tests;
 
+import static ru.iteco.fmhandroid.ui.utils.Data.emptyLogin;
+import static ru.iteco.fmhandroid.ui.utils.Data.emptyPassword;
+import static ru.iteco.fmhandroid.ui.utils.Data.errorEmptyFields;
+import static ru.iteco.fmhandroid.ui.utils.Data.errorWrongCredentials;
+import static ru.iteco.fmhandroid.ui.utils.Data.invalidLogin;
+import static ru.iteco.fmhandroid.ui.utils.Data.invalidPassword;
+import static ru.iteco.fmhandroid.ui.utils.Data.validLogin;
+import static ru.iteco.fmhandroid.ui.utils.Data.validPassword;
+
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.LargeTest;
@@ -44,8 +53,8 @@ public class AuthorizationTest {
     @Story("Тест-кейс 1. Авторизация с тестовыми учетными данными")
     @DisplayName("Авторизация с валидными тестовыми данными")
     public void validLoginAndPasswordTest() {
-        authorizationPage.enterLogin("login2");
-        authorizationPage.enterPassword("password2");
+        authorizationPage.enterLogin(validLogin);
+        authorizationPage.enterPassword(validPassword);
         authorizationPage.clickSignInButton();
         authorizationPage.checkMainPageDisplayed();
     }
@@ -54,38 +63,38 @@ public class AuthorizationTest {
     @Story("Тест-кейс 2.Авторизация при вводе невалидного логина")
     @DisplayName("Авторизация при вводе невалидного логина и валидного пароля")
     public void invalidLoginAndPasswordTest() {
-        authorizationPage.enterLogin("login");
-        authorizationPage.enterPassword("password2");
+        authorizationPage.enterLogin(invalidLogin);
+        authorizationPage.enterPassword(validPassword);
         authorizationPage.clickSignInButton();
-        authorizationPage.checkToastMessage("Login and password cannot be empty");
+        authorizationPage.checkToastMessage(errorWrongCredentials);
     }
 
     @Test
     @Story("Тест-кейс 3. Авторизация при вводе невалиного пароля")
     @DisplayName("Авторизация при вводе валидного логина и невалидного пароля")
     public void validLoginAndInvalidPasswordTest() {
-        authorizationPage.enterLogin("login2");
-        authorizationPage.enterPassword("password");
+        authorizationPage.enterLogin(validLogin);
+        authorizationPage.enterPassword(invalidPassword);
         authorizationPage.clickSignInButton();
-        authorizationPage.checkToastMessage("Login and password cannot be empty");
+        authorizationPage.checkToastMessage(errorWrongCredentials);
     }
 
     @Test
     @Story("Тест-кейс 4. Авторизация при пустой форме")
     @DisplayName("Авторизация при пустой форме")
     public void emptyLoginAndPasswordTest() {
-        authorizationPage.enterLogin("");
-        authorizationPage.enterPassword("");
+        authorizationPage.enterLogin(emptyLogin);
+        authorizationPage.enterPassword(emptyPassword);
         authorizationPage.clickSignInButton();
-        authorizationPage.checkToastMessage("Login and password cannot be empty");
+        authorizationPage.checkToastMessage(errorEmptyFields);
     }
 
     @Test
     @Story("Тест-кейс 25. Выход из аккаунта")
     @DisplayName("Выход из аккаунта")
     public void logOutTest() {
-        authorizationPage.enterLogin("login2");
-        authorizationPage.enterPassword("password2");
+        authorizationPage.enterLogin(validLogin);
+        authorizationPage.enterPassword(validPassword);
         authorizationPage.clickSignInButton();
         authorizationPage.checkMainPageDisplayed();
         authorizationPage.performLogout();

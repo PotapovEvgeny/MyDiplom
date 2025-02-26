@@ -1,0 +1,105 @@
+{
+    "name": "Сворачивание/разворачивание выбранной новости из раздела 'Новости'",
+    "start": 1740491782711,
+    "stop": 1740491789441,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Открываем главное меню",
+            "start": 1740491788053,
+            "stop": 1740491788054,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Переход в раздел 'Новости'",
+            "start": 1740491788390,
+            "stop": 1740491788390,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Разворачиваем и сворачиваем новость в разделе 'Новости'",
+            "start": 1740491788664,
+            "stop": 1740491788664,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "19e656c3-3906-4984-a778-908f9320f2a4",
+    "historyId": "aa1eaebdcb461424e094fd7a3872254d",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.NewsTests.shouldCollapseTheSelectedNewsFromNewsTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.NewsTests"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldCollapseTheSelectedNewsFromNewsTest"
+        },
+        {
+            "name": "suite",
+            "value": "Страница новостей"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1736)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 11. Свернуть/развернуть выбранную новость в разделе Новости"
+        }
+    ]
+}

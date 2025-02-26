@@ -7,12 +7,25 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItem;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.fail;
 import static ru.iteco.fmhandroid.ui.utils.DataHelper.clickChildViewWithId;
+import static ru.iteco.fmhandroid.ui.utils.DataHelper.findNewsPosition;
+import static ru.iteco.fmhandroid.ui.utils.DataHelper.getRecyclerViewItemCount;
+import static ru.iteco.fmhandroid.ui.utils.DataHelper.getTextFromNews;
+import static ru.iteco.fmhandroid.ui.utils.DataHelper.waitElement;
 
+import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.contrib.RecyclerViewActions;
+
+import org.hamcrest.CoreMatchers;
 
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
@@ -20,6 +33,19 @@ import ru.iteco.fmhandroid.ui.utils.DataHelper;
 
 
 public class NewsPage {
+    public int newsListId = R.id.news_list_recycler_view;
+
+    public int getItemCount() {      //Получаем количество элементов в списке новостей
+        int itemCount = getRecyclerViewItemCount(newsListId);
+        return itemCount;
+    }
+
+    public void scrollNews(int i) {
+        onView(withId(newsListId))
+                .perform(scrollToPosition(i))
+                .perform(actionOnItemAtPosition(i, scrollTo()))
+                .check(matches(isDisplayed()));
+    }
 
     public void openEditNews() {
         Allure.step("Открываем редактирование новостей");
@@ -28,11 +54,11 @@ public class NewsPage {
                 .perform(click());
     }
 
-    public void deleteNewsItem(int index) {
-        Allure.step("Удаляем новость с индексом " + index);
-        onView(withId(R.id.news_list_recycler_view))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(index,
-                        clickChildViewWithId(R.id.delete_news_item_image_view)));
+    public void deleteNewsItem(String title) {
+        Allure.step("Удаляем выбранную новость - " + title);
+        findNewsWithTittle(title);
+        onView(CoreMatchers.allOf(withId(R.id.news_item_material_card_view), hasDescendant(withText(title))))
+                .perform(clickChildViewWithId(R.id.delete_news_item_image_view));
         onView(withText("OK"))
                 .perform(click());
     }
@@ -79,7 +105,7 @@ public class NewsPage {
     public void editNewsItem() {
         Allure.step("Редавтировать выбранную новость");
         onView(withId(R.id.news_list_recycler_view))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0,
+                .perform(actionOnItemAtPosition(0,
                         clickChildViewWithId(R.id.edit_news_item_image_view)));
     }
 
@@ -123,12 +149,60 @@ public class NewsPage {
                 .perform(scrollTo(), click());
     }
 
-    public void verifyUpdatedNewsInList(String expectedTitle) {
+    public void verifyUpdatedNewsInList(String title) {
         Allure.step("Проверка, что новость обновилась и отображается в списке");
-        onView(withId(R.id.news_list_recycler_view))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        try {
+            onView(withId(R.id.news_list_recycler_view))
+                    .perform(actionOnItem(hasDescendant(withText(title)), scrollTo())) // Скроллим к нужному элементу
+                    .check(matches(hasDescendant(withText(title)))); // Проверяем, что он действительно есть
+        } catch (NoMatchingViewException e) {
+            throw new AssertionError("Ошибка: список новостей не найден или новость с заголовком '"
+                    + title + "' отсутствует", e);
+        }
+    }
+
+    public void verifyNewsInList(String title) {
+        Allure.step("Проверяем наличие новости '" + title);
+        int position = findNewsPosition(title); // Определяем позицию новости
+        if (position == -1) {
+            fail("Новость с заголовком '" + title + "' не найдена в списке.");
+        } else {
+            onView(withId(R.id.news_list_recycler_view))
+                    .perform(scrollToPosition(position));
+            onView(DataHelper.RecyclerViewMatcher.withRecyclerView(R.id.news_list_recycler_view)
+                    .atPositionOnView(position, R.id.news_item_title_text_view))
+                    .check(matches(withText(title)));
+        }
+    }
+
+    public void checkNewsDeleted(int itemCount, String tittle) {
+        Allure.step("Проверяем, что новость удалена");
+        for (int i = 0; i < itemCount; i++) {
+            scrollNews(i);
+            String actualTittle = getTextFromNews(R.id.news_item_title_text_view, i);
+            assertNotEquals(tittle, actualTittle);
+        }
+    }
+
+    public void findNewsWithTittle(String title) {
+        Allure.step("Ищем новость в списке по заголовку " + title);
+        waitElement(newsListId);
+        onView(withId(newsListId))
+                .check(matches(isDisplayed()))
+                .perform(RecyclerViewActions.scrollTo(hasDescendant(CoreMatchers.allOf(withText(title)))));
+        onView(withId(newsListId))
+                .check(matches(isDisplayed()));
     }
 }
+
+
+
+
+
+
+    
+
+
 
 
 

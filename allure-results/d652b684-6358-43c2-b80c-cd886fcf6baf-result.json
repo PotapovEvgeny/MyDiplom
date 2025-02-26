@@ -1,0 +1,169 @@
+{
+    "name": "Переход в раздел 'Наша мииссия'",
+    "start": 1740490780811,
+    "stop": 1740490788394,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Нажимаем на кнопку 'Our Mission'",
+            "start": 1740490786615,
+            "stop": 1740490786615,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверяем, что текст 'Love is all' отображается",
+            "start": 1740490786939,
+            "stop": 1740490786940,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Выполняем действия над элементами в RecyclerView",
+            "start": 1740490786942,
+            "stop": 1740490786942,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Клик по элементу в RecyclerView на позиции {1}",
+            "start": 1740490786942,
+            "stop": 1740490786942,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Клик по элементу в RecyclerView на позиции {1}",
+            "start": 1740490787253,
+            "stop": 1740490787253,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Клик по элементу в RecyclerView на позиции {1}",
+            "start": 1740490787552,
+            "stop": 1740490787553,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Клик по элементу в RecyclerView на позиции {1}",
+            "start": 1740490787854,
+            "stop": 1740490787854,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "d652b684-6358-43c2-b80c-cd886fcf6baf",
+    "historyId": "276c8cfc08f78abfbf0754b9db2ed642",
+    "fullName": "ru.iteco.fmhandroid.ui.tests.QuotesTest.quotesSectionTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.tests"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.tests.QuotesTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "quotesSectionTest"
+        },
+        {
+            "name": "suite",
+            "value": "Страница Наша миссия/Цитаты"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1595)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Тест-кейс 7. Переход в раздел \"Тематические цитаты\" с помощью кнопки \"Наша миссия\" (бабочка) на верхней панели"
+        }
+    ]
+}

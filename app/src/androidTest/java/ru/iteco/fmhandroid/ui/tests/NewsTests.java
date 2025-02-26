@@ -1,5 +1,18 @@
 package ru.iteco.fmhandroid.ui.tests;
 
+import static ru.iteco.fmhandroid.ui.utils.Data.categoryNews;
+import static ru.iteco.fmhandroid.ui.utils.Data.categoryNews2;
+import static ru.iteco.fmhandroid.ui.utils.Data.descriptionNews;
+import static ru.iteco.fmhandroid.ui.utils.Data.descriptionNews2;
+import static ru.iteco.fmhandroid.ui.utils.Data.errorFillFields;
+import static ru.iteco.fmhandroid.ui.utils.Data.newsDate;
+import static ru.iteco.fmhandroid.ui.utils.Data.newsDate2;
+import static ru.iteco.fmhandroid.ui.utils.Data.newsTime;
+import static ru.iteco.fmhandroid.ui.utils.Data.newsTime2;
+import static ru.iteco.fmhandroid.ui.utils.Data.titleNews;
+import static ru.iteco.fmhandroid.ui.utils.Data.titleNews2;
+import static ru.iteco.fmhandroid.ui.utils.Data.titleNews3;
+
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -35,6 +48,7 @@ public class NewsTests {
         if (!DataHelper.isUserLoggedIn(InstrumentationRegistry.getInstrumentation().getTargetContext())) {
             DataHelper.performLogin();
         }
+
     }
 
     @Test
@@ -78,12 +92,13 @@ public class NewsTests {
         mainMenuPage.openNewsSection();
         newsPage.openEditNews();
         newsPage.addNews();
-        newsPage.selectCategory("Объявление");
-        newsPage.updateNewsTitle("Объявление");
-        newsPage.updatePublishDate("15.04.2025");
-        newsPage.updatePublishTime("10:00");
-        newsPage.updateDescription("Годовщина");
+        newsPage.selectCategory(categoryNews);
+        newsPage.updateNewsTitle(titleNews);
+        newsPage.updatePublishDate(newsDate);
+        newsPage.updatePublishTime(newsTime);
+        newsPage.updateDescription(descriptionNews);
         newsPage.saveNewsItem();
+        newsPage.verifyNewsInList(titleNews);
     }
 
     @Test
@@ -95,7 +110,7 @@ public class NewsTests {
         newsPage.openEditNews();
         newsPage.addNews();
         newsPage.saveNewsItem();
-        newsPage.checkToastMessage("Fill empty fields");
+        newsPage.checkToastMessage(errorFillFields);
     }
 
     @Test
@@ -106,23 +121,33 @@ public class NewsTests {
         mainMenuPage.openNewsSection();
         newsPage.openEditNews();
         newsPage.editNewsItem();
-        newsPage.selectCategory("День рождения");
-        newsPage.updateNewsTitle("Будет день рождение");
-        newsPage.updatePublishDate("16.07.2025");
-        newsPage.updatePublishTime("18:00");
-        newsPage.updateDescription("В кафе");
+        newsPage.selectCategory(categoryNews2);
+        newsPage.updateNewsTitle(titleNews2);
+        newsPage.updatePublishDate(newsDate2);
+        newsPage.updatePublishTime(newsTime2);
+        newsPage.updateDescription(descriptionNews2);
         newsPage.saveNewsItem();
-        newsPage.verifyUpdatedNewsInList("Будет день рождение");
+        newsPage.verifyUpdatedNewsInList(titleNews2);
     }
 
     @Test
     @Story("Тест-кейс 21. Удаление новости")
     @DisplayName("Удаление новости")
-    public void deleteNewsTest() {
+    public void deletedNewsTest() {
         mainMenuPage.openMenu();
         mainMenuPage.openNewsSection();
         newsPage.openEditNews();
-        newsPage.deleteNewsItem(0);
+        newsPage.editNewsItem();
+        newsPage.selectCategory(categoryNews);
+        newsPage.updateNewsTitle(titleNews3);
+        newsPage.updatePublishDate(newsDate);
+        newsPage.updatePublishTime(newsTime);
+        newsPage.updateDescription(descriptionNews);
+        newsPage.saveNewsItem();
+        newsPage.verifyUpdatedNewsInList(titleNews3);
+        newsPage.findNewsWithTittle(titleNews3);
+        newsPage.deleteNewsItem(titleNews3);
+        newsPage.checkNewsDeleted(newsPage.getItemCount(), titleNews3);
     }
 }
 

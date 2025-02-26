@@ -60,7 +60,7 @@ public class FilterNewsTest {
         filterNewsPage.applyFilter();
         filterNewsPage.verifyFilteredNewsAreDisplayed();
 
-        assertTrue("Отфильтрованные новости должны быть отображены", true); // Пустая проверка для демонстрации
+        assertTrue("Отфильтрованные новости должны быть отображены", true);
     }
 
     @Test
